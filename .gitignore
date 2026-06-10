@@ -1,0 +1,6 @@
+# Ignore Dataset Cache
+*.cache
+
+# Ignore all images inside any subdirectories of train and val
+dataset/train/*/*.jpg
+dataset/val/*/*.jpg

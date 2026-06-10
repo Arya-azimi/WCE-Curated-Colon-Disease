@@ -1,12 +1,16 @@
-# 1. Ignore all files inside train and val directories
-dataset/train/**/*
-dataset/val/**/*
+# 1. Ignore everything in train and val folders recursively
+**/train/**/*
+**/val/**/*
 
-# 2. But DO NOT ignore the directory structure (allow keeping them tracked)
-!dataset/train/**/
-!dataset/val/**/
+# 2. BUT do not ignore the subdirectories themselves (allows tracking structure)
+!**/train/**/
+!**/val/**/
 
-# 3. Explicitly ensure images and cache are still ignored
-**/train/**/*.jpg
-**/val/**/*.jpg
+# 3. BUT keep ignoring all images and caches
+**/*.jpg
+**/*.png
+**/*.jpeg
 *.cache
+
+# 4. Explicitly ALLOW tracking .gitkeep files
+!**/.gitkeep

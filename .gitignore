@@ -1,6 +1,12 @@
-# Ignore Dataset Cache
-*.cache
+# 1. Ignore all files inside train and val directories
+dataset/train/**/*
+dataset/val/**/*
 
-# Ignore all images inside any subdirectories of train and val
-dataset/train/*/*.jpg
-dataset/val/*/*.jpg
+# 2. But DO NOT ignore the directory structure (allow keeping them tracked)
+!dataset/train/**/
+!dataset/val/**/
+
+# 3. Explicitly ensure images and cache are still ignored
+**/train/**/*.jpg
+**/val/**/*.jpg
+*.cache
